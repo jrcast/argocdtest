@@ -31,10 +31,6 @@ spec:
         - containerPort: 80
         securityContext:
           allowPrivilegeEscalation: false
-          capabilities:
-            drop:
-              - ALL
-          readOnlyRootFilesystem: true
 
 ---
 apiVersion: v1
