@@ -9,8 +9,6 @@ metadata:
   namespace: {{ .namespace }}
   finalizers:
   - resources-finalizer.argocd.argoproj.io
-  labels:
-    enable: {{ .enable }}
 spec:
   destination:
     namespace: {{ .spec.destination.namespace }}
