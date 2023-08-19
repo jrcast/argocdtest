@@ -26,7 +26,7 @@ spec:
       {{- end }}
       parameters:
         - name: image.tag
-          value: {{ .spec.source.imagetag | default .spec.source.targetRevision }}
+          value: {{ .spec.source.imagetag | default .spec.source.targetRevision | quote }}
   syncPolicy:
     automated:
       prune: true
