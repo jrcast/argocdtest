@@ -13,4 +13,5 @@ applications:
         targetRevision: main
         helm:
           valuesFiles:
+          - values.yaml
           - configs.yaml
