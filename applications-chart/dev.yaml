@@ -3,7 +3,7 @@ applications:
     enable: true
     spec:
       source:
-        targetRevision: HEAD
+        targetRevision: 6d0b9c30abbe5fe6e6eae3f76e7e126ee0192b3f
         imagetag: "0.2"
   guestbook2:
     spec:
