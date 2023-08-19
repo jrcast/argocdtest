@@ -3,8 +3,9 @@ applications:
     enable: true
     spec:
       source:
-        targetRevision: 6d0b9c30abbe5fe6e6eae3f76e7e126ee0192b3f
+        targetRevision: 6b4dbc58cf5b602410a5a943ee9272c73a56094c
         imagetag: "0.2"
+
   guestbook2:
     spec:
       source:
