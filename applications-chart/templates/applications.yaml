@@ -1,0 +1,37 @@
+# templates/applications.yaml
+{{- range $appname, $_ := .Values.applications }}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ $appname | quote}}
+{{- with (index $.Values.applications $appname) }}
+  namespace: {{ .namespace }}
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: {{ .spec.destination.namespace }}
+    name: {{ .spec.destination.name }}
+  project: default
+  source:
+    path: {{ .spec.source.path }}
+    repoURL: {{ .spec.source.repoURL }}
+    targetRevision: {{ .spec.source.targetRevision }}
+
+    helm:
+      valueFiles:
+      {{- range .spec.source.helm.valuesFiles }}
+      - {{ . | quote }}
+      {{- end }}
+      parameters:
+        - name: image.tag
+          value: {{ .spec.source.imagetag | default .spec.source.targetRevision }}
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+    - CreateNamespace=true
+{{- end }}
+{{- end }}
+
