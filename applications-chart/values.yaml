@@ -1,0 +1,16 @@
+
+applications:
+- name: guestbook
+  enable: true
+  namespace: default
+  spec:
+    destination:
+      name: in-cluster
+      namespace: guestbook
+    source:
+      path: guestbook
+      repoURL: https://github.com/jrcast/argocdtest.git
+      targetRevision: main
+      helm:
+        valuesFiles:
+        - configs.yaml
