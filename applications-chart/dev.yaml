@@ -4,8 +4,8 @@ applications:
     spec:
       source:
         targetRevision: HEAD
-        imageTag: "0.2"
+        imagetag: "0.2"
   guestbook2:
     spec:
       source:
-        imageTag: "0.2"
+        imagetag: "0.2"
