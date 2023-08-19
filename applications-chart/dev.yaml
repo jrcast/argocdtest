@@ -1,6 +1,0 @@
-applications:
-  guestbook:
-    enable: true
-    spec:
-      source:
-        targetRevision: HEAD
