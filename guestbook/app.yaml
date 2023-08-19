@@ -22,8 +22,6 @@ spec:
         app: guestbook-ui
     spec:
       securityContext:
-        runAsNonRoot: true
-        runAsUser: 1000
         seccompProfile:
           type: RuntimeDefault
       containers:
