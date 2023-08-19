@@ -1,5 +1,0 @@
-guestbook:
-  enable: true
-  spec:
-    source:
-      targetRevision: main
