@@ -19,7 +19,7 @@ spec:
     targetRevision: {{ $.Values.spec.source.targetRevision }}
 
     helm:
-      valueFiles: {{ $.Values.helm.valuesFiles }}
+      valueFiles: {{ $.Values.spec.source.helm.valuesFiles }}
       parameters:
         - name: image.tag
           value: {{ $.Values.spec.source.targetRevision }}
