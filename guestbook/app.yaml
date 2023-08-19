@@ -1,7 +1,15 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    kubernetes.io/metadata.name: guestbook
+  name: guestbook
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: guestbook-ui
+  namespace: guestbook
 spec:
   replicas: 1
   revisionHistoryLimit: 3
@@ -35,9 +43,11 @@ apiVersion: v1
 kind: Service
 metadata:
   name: guestbook-ui
+  namespace: guestbook
 spec:
   ports:
   - port: 80
     targetPort: 80
   selector:
     app: guestbook-ui
+    
